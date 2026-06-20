@@ -1,0 +1,33 @@
+{
+  "$schema": "https://static.modelcontextprotocol.io/schemas/2025-07-09/server.json",
+  "name": "news.thenexus/nexus-mcp",
+  "description": "U.S. government primary-source records (courts, SEC/EDGAR, OFAC, FEC, lobbying, DOJ, FDA), fact-checks with citations, news search, and corruption/fraud/PRC trackers — for AI agents.",
+  "version": "1.0.0",
+  "websiteUrl": "https://thenexus.news/developers",
+  "repository": {
+    "url": "https://github.com/TheNexusIntel/nexus-mcp",
+    "source": "github"
+  },
+  "packages": [
+    {
+      "registryType": "npm",
+      "registryBaseUrl": "https://registry.npmjs.org",
+      "identifier": "@thenexus/mcp",
+      "version": "1.0.0",
+      "transport": { "type": "stdio" },
+      "environmentVariables": [
+        {
+          "name": "NEXUS_API_KEY",
+          "description": "Your free Nexus API key from https://thenexus.news/developers",
+          "isRequired": true,
+          "isSecret": true
+        },
+        {
+          "name": "NEXUS_API_BASE",
+          "description": "API base URL (default https://thenexus.news). Only override to a host you trust — your key is sent there.",
+          "isRequired": false
+        }
+      ]
+    }
+  ]
+}

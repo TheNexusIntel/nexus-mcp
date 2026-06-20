@@ -1,0 +1,56 @@
+{
+  "name": "@thenexus/mcp",
+  "version": "1.0.0",
+  "type": "module",
+  "description": "MCP server for The Nexus — U.S. government primary-source records (courts, SEC/EDGAR, OFAC, FEC, lobbying, DOJ, FDA), fact-checks with citations, news search, and corruption/fraud/PRC trackers — for AI agents.",
+  "bin": {
+    "nexus-mcp": "server.js"
+  },
+  "files": [
+    "server.js",
+    "README.md",
+    "LICENSE"
+  ],
+  "scripts": {
+    "start": "node server.js"
+  },
+  "engines": {
+    "node": ">=18"
+  },
+  "keywords": [
+    "mcp",
+    "model-context-protocol",
+    "modelcontextprotocol",
+    "government-records",
+    "public-records",
+    "sec",
+    "edgar",
+    "ofac",
+    "sanctions",
+    "fec",
+    "lobbying",
+    "court-records",
+    "pacer",
+    "doj",
+    "fda",
+    "fact-check",
+    "news",
+    "osint",
+    "intelligence",
+    "thenexus"
+  ],
+  "homepage": "https://thenexus.news/developers",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/TheNexusIntel/nexus-mcp.git"
+  },
+  "bugs": {
+    "url": "https://thenexus.news/contact"
+  },
+  "author": "The Nexus (https://thenexus.news)",
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^1.29.0",
+    "zod": "^3.23.8"
+  },
+  "license": "MIT"
+}
