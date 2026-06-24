@@ -1,8 +1,8 @@
 {
   "$schema": "https://static.modelcontextprotocol.io/schemas/2025-07-09/server.json",
   "name": "io.github.thenexusintel/nexus-mcp",
-  "description": "U.S. government primary-source records (courts, SEC/EDGAR, OFAC, FEC, lobbying, DOJ, FDA), fact-checks with citations, news search, and corruption/fraud/PRC trackers \u2014 for AI agents.",
-  "version": "1.0.1",
+  "description": "U.S. gov records, fact-checks with citations, news search, and fraud/corruption/PRC trackers.",
+  "version": "1.0.2",
   "websiteUrl": "https://thenexus.news/developers",
   "repository": {
     "url": "https://github.com/TheNexusIntel/nexus-mcp",
@@ -13,7 +13,7 @@
       "registryType": "npm",
       "registryBaseUrl": "https://registry.npmjs.org",
       "identifier": "@thenexusintel/mcp",
-      "version": "1.0.1",
+      "version": "1.0.2",
       "transport": {
         "type": "stdio"
       },
