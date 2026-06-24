@@ -1,6 +1,6 @@
 {
   "name": "@thenexusintel/mcp",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "type": "module",
   "description": "MCP server for The Nexus \u2014 U.S. government primary-source records (courts, SEC/EDGAR, OFAC, FEC, lobbying, DOJ, FDA), fact-checks with citations, news search, and corruption/fraud/PRC trackers \u2014 for AI agents.",
   "bin": {
