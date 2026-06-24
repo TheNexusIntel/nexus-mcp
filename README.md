@@ -16,7 +16,7 @@ A [Model Context Protocol](https://modelcontextprotocol.io) server for **The Nex
 ## Setup
 
 1. Get a free, email-verified API key at **https://thenexus.news/developers**.
-2. Install: `npm install -g @thenexus/mcp` (or clone and `npm install`).
+2. Install: `npm install -g @thenexusintel/mcp` (or clone and `npm install`).
 3. Add the server to your MCP client.
 
 ### Claude Desktop / Claude Code
@@ -26,7 +26,7 @@ A [Model Context Protocol](https://modelcontextprotocol.io) server for **The Nex
   "mcpServers": {
     "nexus": {
       "command": "npx",
-      "args": ["-y", "@thenexus/mcp"],
+      "args": ["-y", "@thenexusintel/mcp"],
       "env": { "NEXUS_API_KEY": "nxs_live_your_key_here" }
     }
   }

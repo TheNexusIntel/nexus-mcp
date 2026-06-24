@@ -1,0 +1,50 @@
+name: publish
+
+# Publishes nexus-mcp on a version tag:
+#   1. npm  -> @thenexusintel/mcp   (needs the NPM_TOKEN repo secret)
+#   2. MCP registry -> server.json   (GitHub OIDC; see namespace note below)
+#
+# Cut a release:  npm version patch && git push --follow-tags
+on:
+  push:
+    tags: ["v*"]
+  workflow_dispatch: {}
+
+permissions:
+  contents: read
+  id-token: write   # required for MCP registry "login github" (OIDC)
+
+jobs:
+  npm:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+          registry-url: "https://registry.npmjs.org"
+      - run: npm install --no-audit --no-fund
+      # Scoped packages are private by default; --access public makes it installable.
+      - run: npm publish --access public
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+
+  mcp-registry:
+    runs-on: ubuntu-latest
+    needs: npm
+    steps:
+      - uses: actions/checkout@v4
+      - name: Install mcp-publisher
+        run: |
+          curl -fsSL https://github.com/modelcontextprotocol/registry/releases/latest/download/mcp-publisher_linux_amd64.tar.gz \
+            | tar -xz mcp-publisher
+          sudo mv mcp-publisher /usr/local/bin/
+      # server.json name is `io.github.thenexusintel/nexus-mcp`, which `login
+      # github` (OIDC) authorizes directly from this repo (TheNexusIntel/nexus-mcp),
+      # so no DNS/secret is needed. Non-fatal on the first run so a tag push still
+      # publishes to npm even if the registry step needs a retry.
+      - name: Publish to MCP registry
+        continue-on-error: true
+        run: |
+          mcp-publisher login github
+          mcp-publisher publish
