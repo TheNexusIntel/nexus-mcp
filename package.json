@@ -1,6 +1,6 @@
 {
   "name": "@thenexusintel/mcp",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "type": "module",
   "description": "MCP server for The Nexus: U.S. government primary-source records (courts, SEC/EDGAR, OFAC, FEC, lobbying, DOJ, FDA), fact-checks with citations, news search, and corruption/fraud/PRC trackers, for AI agents.",
   "bin": {
@@ -52,5 +52,6 @@
     "@modelcontextprotocol/sdk": "^1.29.0",
     "zod": "^3.23.8"
   },
-  "license": "MIT"
+  "license": "MIT",
+  "mcpName": "io.github.TheNexusIntel/nexus-mcp"
 }
